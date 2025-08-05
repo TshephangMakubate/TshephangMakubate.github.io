@@ -1,0 +1,436 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    color: #37474f;
+}
+
+#Menu_Bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 98%;
+    padding: 15px 30px;
+    background-color: #263238;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    right: 1px;
+    padding-left: 10px;
+}
+#Connect {
+    text-align: center;
+    margin-top: 80px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 350px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+#Connect h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #37474f;
+}
+
+#Connect p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    color: #555;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#Connect_Icons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    font-size: 1.8rem;
+}
+
+#Connect_Icons a {
+    color: #37474f;
+    transition: color 0.3s ease;
+}
+
+#Connect_Icons a:hover {
+    color: #d4af37;
+}
+#Menu_Bar a {
+    color: #f5f5f5;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+#Menu_Bar a:hover {
+    color: #d4af37;
+}
+
+#Home_Button a {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+#Landing_Container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 120px;
+    padding: 60px 30px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+    gap: 0px;
+}
+
+#Landing_Left {
+    flex: 1;
+    min-width: 300px;
+    padding-right: 20px;
+}
+
+#Landing_Title {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #d4af37;
+}
+
+#Landing_Description {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #37474f;
+}
+
+#Landing_Links {
+    display: flex;
+    gap: 15px;
+}
+
+.Landing_Button {
+    background-color: #d4af37;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.Landing_Button:hover {
+    background-color: #c89c28;
+}
+
+#Landing_Right {
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+}
+
+#Landing_Headshot {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+}
+#Currently {
+    display: block; /* override any grid/flex */
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 60px;
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#Currently h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #d4af37;
+    text-align: center;
+}
+
+#Currently ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.6;
+    padding-left: 130px;
+}
+
+#Currently ul li {
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+}
+
+/* Emoji icons */
+#Currently ul li:nth-child(1)::before {
+    content: '🎓';
+    margin-right: 10px;
+}
+#Currently ul li:nth-child(2)::before {
+    content: '📖';
+    margin-right: 10px;
+}
+#Currently ul li:nth-child(3)::before {
+    content: '🎧';
+    margin-right: 10px;
+}
+#Currently ul li:nth-child(4)::before {
+    content: '💡';
+    margin-right: 10px;
+}
+.Page_Section {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 30px;
+}
+#BannerSlider {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 80px auto 40px;
+}
+
+.Slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.Slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 10px;
+}
+
+.Slide.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.Arrow {
+    position: absolute;
+    top: 55%;
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 10px 14px;
+    cursor: pointer;
+    z-index: 2;
+    transition: background 0.3s ease;
+}
+
+.Arrow:hover {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.Arrow.left {
+    left: 15px;
+}
+
+.Arrow.right {
+    right: 15px;
+}
+#Banner_Heading {
+    text-align: center;
+    font-size: 2rem;
+    color: #d4af37;
+}
+#About_Container, #Resume_Container {
+    max-width: 1000px;
+    margin: 120px auto 60px auto;
+    padding: 0 20px;
+}
+#About_Container h2 {
+    color: #d4af37;
+}
+#About_Header, #Projects_Header, #Resume_Header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+#About_Header h1,
+#Projects_Header h1,
+#Resume_Header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    color: #d4af37;
+}
+.Project_Link {
+    color: #37474f; /* base color */
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 10px;
+    transition: color 0.3s ease;
+}
+
+.Project_Link:hover {
+    color: #d4af37; /* hover color */
+}
+#About_Header p,
+#Projects_Header p,
+#Resume_Header p {
+    font-size: 1rem;
+    color: #37474f;
+}
+
+#About_Bio,
+#About_Interests {
+    margin-bottom: 40px;
+}
+
+#About_Interests ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+#About_Interests li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #37474f;
+}
+
+#Projects_Container {
+    max-width: 1100px;
+    margin: 120px auto 60px auto;
+    padding: 0 20px;
+}
+
+#Projects_Grid,
+.Resume_Grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.Project_Card,
+.Resume_Card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.Project_Card:hover,
+.Resume_Card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.Project_Card h2,
+.Resume_Card h3 {
+    margin-bottom: 10px;
+    color: #d4af37;
+}
+
+.Project_Card p,
+.Resume_Card p {
+    font-size: 0.95rem;
+    color: #37474f;
+}
+
+#Resume_Embed iframe {
+    width: 100%;
+    height: 600px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+#Social_Icons a {
+    color: #f5f5f5;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+    }
+#Social_Icons a:hover {
+    color: #d4af37;
+}
+#About_Playlist {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+#About_Playlist iframe {
+    width: 100%;
+    max-width: 660px;
+    height: 450px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border: none;
+}
+#About_Photos {
+    margin-bottom: 40px;
+}
+
+.About_PhotoGrid {
+    display: grid;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.PortraitRow {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.LandscapeRow {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.About_PhotoGrid img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.About_PhotoGrid img:hover {
+    transform: scale(1.03);
+}
+@media (max-width: 768px) {
+    #Landing_Container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #Landing_Left {
+        padding-right: 0;
+    }
+
+    #Menu_Bar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #Other_Buttons {
+        margin-top: 10px;
+    }
+    #Connect{
+        padding:0px;
+    }
+}

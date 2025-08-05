@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Tshephang Makubate</title>
+    <meta name="description" content="Tshephang Makubate's student portfolio showcasing projects, his resumé, about and contact information">
+    <link rel="icon" type="image/png" href="img/dragon.png">
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="Menu_Bar">
+        <div id="Home_Button">
+            <a href="home_page.html">Tshephang Makubate</a>
+        </div>
+        <div id="Other_Buttons">
+            <a href="about-me.html">About Me</a>
+            <a href="projects.html">Projects</a>
+            <a href="resume.html">Resumé</a>
+            <a id="Social_Icons" href="mailto:tshephangscott@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+            <a id="Social_Icons" href="https://www.linkedin.com/in/tshephangmakubate" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a id="Social_Icons" href="https://www.instagram.com/tshephang.makubate" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+    </div>
+
+    <div id="Landing_Container">
+        <div id="Landing_Left">
+            <h1 id="Landing_Title">Hi, I'm Tshephang.</h1>
+            <p id="Landing_Description">
+                I'm a Motswana currently studying at the University of Southern California, passionate about the social impact of technology and how we can reimagine it to improve even one person’s life. Whether it's a simple game, a poem, or a large-scale project, I create with purpose for humanity.
+            </p>
+        </div>
+        <div id="Landing_Right">
+            <img id="Landing_Headshot" src="img/headshot.jpg" alt="Tshephang Makubate headshot">
+        </div>
+        <section id="Currently">
+            <h2>Currently</h2>
+            <ul>
+                <li>Studying: implementing AI into business transactions</li>
+                <li>Reading: Braiding Sweetgrass by Robin Wall Kimmerer</li>
+                <li>Listening: Flicker of Light by Lola Young</li>
+                <li>Working on: building a project based around neural networks</li>
+            </ul>
+        </section>
+        <div id="BannerSlider">
+            <h2 id="Banner_Heading">The Places that made me who I am</h2>
+            <div class="Slide active"><img src="img/usc.jpg" alt="USC campus"></div>
+            <div class="Slide"><img src="img/botswana.jpg" alt="Botswana landscape"></div>
+            <div class="Slide"><img src="img/dundee.jpg" alt="Dundee landscape"></div>
+            <button class="Arrow left" onclick="prevSlide()"><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="Arrow right" onclick="nextSlide()"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+        <section id="Connect">
+            <h2>Want to connect with me?</h2>
+            <p>I’m always open to conversations — whether it’s about tech, collaboration, or just saying hi. Let’s build something meaningful.</p>
+
+            <div id="Connect_Icons">
+                <a href="mailto:tshephangscott@gmail.com" target="_blank" aria-label="Email">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            <a href="https://www.linkedin.com/in/tshephang-makubate-861956270/" target="_blank" aria-label="LinkedIn">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="https://www.instagram.com/tshephang_makubate/" target="_blank" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            </div>
+        </section>
+    </div>
+    <script>
+        const slides = document.querySelectorAll('.Slide');
+        let current = 0;
+        let timer = setInterval(nextSlide, 4000);
+
+        function showSlide(index) {
+            slides[current].classList.remove('active');
+            current = (index + slides.length) % slides.length;
+            slides[current].classList.add('active');
+        }
+
+        function nextSlide() {
+            showSlide(current + 1);
+        }
+
+        function prevSlide() {
+            showSlide(current - 1);
+        }
+
+  // Optional: pause timer on interaction
+        document.querySelectorAll('.Arrow').forEach(btn => {
+            btn.addEventListener('click', () => {
+            clearInterval(timer);
+            timer = setInterval(nextSlide, 4000);
+            });
+        });
+    </script>
+</body>
+</html>
