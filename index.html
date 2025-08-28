@@ -1,11 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="refresh" content="0; url=home_page.html" />
-  <title>Redirecting to Home</title>
-</head>
-<body>
-  <p>If you’re not redirected, <a href="home_page.html">click here to go to the homepage</a>.</p>
-</body>
-</html>
+<!doctype html>
+<meta charset="utf-8" />
+<title>Index</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+<meta http-equiv="refresh" content="7; url=home_page.html">
+
+<style>
+  :root { color-scheme: dark; }
+
+  html, body {
+    height: 100%;
+    margin: 0;
+    background-color: #37474f;  
+  }
+  body {
+    display: grid;
+    place-items: center;
+  }
+
+  /* Typewriter */
+  .typewriter {
+    font-family: 'Montserrat', ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-weight: 600;
+    font-size: 4em;
+    color: #d4af37;                 
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: .08em solid currentColor;  
+    width: calc(var(--n, 0) * 1ch - 0.08em);
+    animation:
+      typing var(--dur, 2s) steps(var(--n), end) both,
+      caret .7s step-end 2s var(--blinks, 2) normal forwards;
+    text-align: center;
+  }
+
+  @keyframes typing { from { width: 0 } }
+  @keyframes caret  { 50% { border-color: transparent } }
+</style>
+
+<h1 id="title" class="typewriter">Hi, I'm Tshephang! Welcome.</h1>
+<script>
+  const title = document.getElementById('title');
+  const textLen = title.textContent.trim().length;
+  title.style.setProperty('--n', textLen); 
+  title.style.setProperty('--dur', '5s'); 
+</script>
